@@ -1,6 +1,6 @@
 # MEPID-Join [PVLDB '26 / VLDB '27]
 
-This repository contains the source code for MEPID-Join [PVLDB '26 / VLDB '27], a fast and memory-efficient in-memory join algorithm for Processing-in-DIMM architectures (e.g., UPMEM DIMM).
+This repository contains the source code for MEPID-Join [PVLDB '26 / VLDB '27], a memory-efficient in-memory join algorithm for capacity-limited Processing-in-DIMM architectures (e.g., UPMEM DIMM).
 If you find MEPID-Join useful to your research, please cite:
 
 ```bibtex
