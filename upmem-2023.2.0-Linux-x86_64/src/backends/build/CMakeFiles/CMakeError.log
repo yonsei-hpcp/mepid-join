@@ -1,0 +1,1377 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_59064/fast && /usr/bin/make -f CMakeFiles/cmTC_59064.dir/build.make CMakeFiles/cmTC_59064.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_59064.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_59064.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_59064
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59064.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -DCMAKE_HAVE_LIBC_PTHREAD  -Wl,--enable-new-dtags  CMakeFiles/cmTC_59064.dir/src.c.o  -o cmTC_59064 
+CMakeFiles/cmTC_59064.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x56): undefined reference to `pthread_cancel'
+src.c:(.text+0x67): undefined reference to `pthread_join'
+src.c:(.text+0x7b): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_59064.dir/build.make:103: recipe for target 'cmTC_59064' failed
+make[1]: *** [cmTC_59064] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_59064/fast' failed
+make: *** [cmTC_59064/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5079a/fast && /usr/bin/make -f CMakeFiles/cmTC_5079a.dir/build.make CMakeFiles/cmTC_5079a.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5079a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_5079a.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5079a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5079a.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--enable-new-dtags  CMakeFiles/cmTC_5079a.dir/CheckFunctionExists.c.o  -o cmTC_5079a  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_5079a.dir/build.make:103: recipe for target 'cmTC_5079a' failed
+make[1]: *** [cmTC_5079a] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_5079a/fast' failed
+make: *** [cmTC_5079a/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test C_HAS_SSE3_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_327a5/fast && /usr/bin/make -f CMakeFiles/cmTC_327a5.dir/build.make CMakeFiles/cmTC_327a5.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_327a5.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_SSE3_1   -o CMakeFiles/cmTC_327a5.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/pmmintrin.h:111:1: error: inlining failed in call to ‘always_inline’ ‘_mm_lddqu_si128’: target specific option mismatch
+  111 | _mm_lddqu_si128 (__m128i const *__P)
+      | ^~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
+    7 |     a = _mm_lddqu_si128( (const __m128i*)vals );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_327a5.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_327a5.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_327a5.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_327a5/fast' failed
+make: *** [cmTC_327a5/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <pmmintrin.h>
+  int main( )
+  {
+    const int vals[4] = {0,0,0,0};
+    __attribute__((unused)) __m128i a;
+    a = _mm_lddqu_si128( (const __m128i*)vals );
+    return 0;
+  }
+Performing C SOURCE FILE Test C_COMPILES_SSE3_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b6e9e/fast && /usr/bin/make -f CMakeFiles/cmTC_b6e9e.dir/build.make CMakeFiles/cmTC_b6e9e.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b6e9e.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_SSE3_1   -o CMakeFiles/cmTC_b6e9e.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/pmmintrin.h:111:1: error: inlining failed in call to ‘always_inline’ ‘_mm_lddqu_si128’: target specific option mismatch
+  111 | _mm_lddqu_si128 (__m128i const *__P)
+      | ^~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
+    7 |     a = _mm_lddqu_si128( (const __m128i*)vals );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_b6e9e.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_b6e9e.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_b6e9e.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_b6e9e/fast' failed
+make: *** [cmTC_b6e9e/fast] Error 2
+
+
+Source file was:
+
+  #include <pmmintrin.h>
+  int main( )
+  {
+    const int vals[4] = {0,0,0,0};
+    __attribute__((unused)) __m128i a;
+    a = _mm_lddqu_si128( (const __m128i*)vals );
+    return 0;
+  }
+Performing C SOURCE FILE Test C_HAS_SSE4_1_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_33ffa/fast && /usr/bin/make -f CMakeFiles/cmTC_33ffa.dir/build.make CMakeFiles/cmTC_33ffa.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_33ffa.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_SSE4_1_1   -o CMakeFiles/cmTC_33ffa.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:282:1: error: inlining failed in call to ‘always_inline’ ‘_mm_max_epi8’: target specific option mismatch
+  282 | _mm_max_epi8 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+    7 |     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+      |                                           ^~~~~~~~~~~~~~~~~~
+In file included from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:282:1: error: inlining failed in call to ‘always_inline’ ‘_mm_max_epi8’: target specific option mismatch
+  282 | _mm_max_epi8 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+    7 |     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+      |                                           ^~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_33ffa.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_33ffa.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_33ffa.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_33ffa/fast' failed
+make: *** [cmTC_33ffa/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <smmintrin.h>
+  int main ()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_SSE4_1_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b0c45/fast && /usr/bin/make -f CMakeFiles/cmTC_b0c45.dir/build.make CMakeFiles/cmTC_b0c45.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b0c45.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_SSE4_1_1   -o CMakeFiles/cmTC_b0c45.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:282:1: error: inlining failed in call to ‘always_inline’ ‘_mm_max_epi8’: target specific option mismatch
+  282 | _mm_max_epi8 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+    7 |     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+      |                                           ^~~~~~~~~~~~~~~~~~
+In file included from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:282:1: error: inlining failed in call to ‘always_inline’ ‘_mm_max_epi8’: target specific option mismatch
+  282 | _mm_max_epi8 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+    7 |     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+      |                                           ^~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_b0c45.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_b0c45.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_b0c45.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_b0c45/fast' failed
+make: *** [cmTC_b0c45/fast] Error 2
+
+
+Source file was:
+
+  #include <smmintrin.h>
+  int main ()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_SSE4_2_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e1e30/fast && /usr/bin/make -f CMakeFiles/cmTC_e1e30.dir/build.make CMakeFiles/cmTC_e1e30.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e1e30.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_SSE4_2_1   -o CMakeFiles/cmTC_e1e30.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/nmmintrin.h:31,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:797:1: error: inlining failed in call to ‘always_inline’ ‘_mm_cmpgt_epi64’: target specific option mismatch
+  797 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+    8 |     c = _mm_cmpgt_epi64(a, b);
+      |         ^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/nmmintrin.h:31,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:797:1: error: inlining failed in call to ‘always_inline’ ‘_mm_cmpgt_epi64’: target specific option mismatch
+  797 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+    8 |     c = _mm_cmpgt_epi64(a, b);
+      |         ^~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_e1e30.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_e1e30.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e1e30.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_e1e30/fast' failed
+make: *** [cmTC_e1e30/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <nmmintrin.h>
+  int main()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i c = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    c = _mm_cmpgt_epi64(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_SSE4_2_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0db7c/fast && /usr/bin/make -f CMakeFiles/cmTC_0db7c.dir/build.make CMakeFiles/cmTC_0db7c.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0db7c.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_SSE4_2_1   -o CMakeFiles/cmTC_0db7c.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/nmmintrin.h:31,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:797:1: error: inlining failed in call to ‘always_inline’ ‘_mm_cmpgt_epi64’: target specific option mismatch
+  797 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+    8 |     c = _mm_cmpgt_epi64(a, b);
+      |         ^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/nmmintrin.h:31,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:797:1: error: inlining failed in call to ‘always_inline’ ‘_mm_cmpgt_epi64’: target specific option mismatch
+  797 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+    8 |     c = _mm_cmpgt_epi64(a, b);
+      |         ^~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_0db7c.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_0db7c.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_0db7c.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_0db7c/fast' failed
+make: *** [cmTC_0db7c/fast] Error 2
+
+
+Source file was:
+
+  #include <nmmintrin.h>
+  int main()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i c = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    c = _mm_cmpgt_epi64(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_962be/fast && /usr/bin/make -f CMakeFiles/cmTC_962be.dir/build.make CMakeFiles/cmTC_962be.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_962be.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_AVX_1   -o CMakeFiles/cmTC_962be.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+    6 |     a = _mm256_set1_ps(0);
+      |     ~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:43,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avxintrin.h:1318:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_set1_ps’: target specific option mismatch
+ 1318 | _mm256_set1_ps (float __A)
+      | ^~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm256_set1_ps(0);
+      |         ^~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_962be.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_962be.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_962be.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_962be/fast' failed
+make: *** [cmTC_962be/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __attribute__((unused)) __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_AVX_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9ccc0/fast && /usr/bin/make -f CMakeFiles/cmTC_9ccc0.dir/build.make CMakeFiles/cmTC_9ccc0.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9ccc0.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_AVX_1   -o CMakeFiles/cmTC_9ccc0.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+    6 |     a = _mm256_set1_ps(0);
+      |     ~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:43,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avxintrin.h:1318:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_set1_ps’: target specific option mismatch
+ 1318 | _mm256_set1_ps (float __A)
+      | ^~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm256_set1_ps(0);
+      |         ^~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_9ccc0.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_9ccc0.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_9ccc0.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_9ccc0/fast' failed
+make: *** [cmTC_9ccc0/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __attribute__((unused)) __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX2_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e8ad0/fast && /usr/bin/make -f CMakeFiles/cmTC_e8ad0.dir/build.make CMakeFiles/cmTC_e8ad0.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e8ad0.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_AVX2_1   -o CMakeFiles/cmTC_e8ad0.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+    6 |     a = _mm256_abs_epi16(a);
+      |     ~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:47,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx2intrin.h:63:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_abs_epi16’: target specific option mismatch
+   63 | _mm256_abs_epi16 (__m256i __A)
+      | ^~~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm256_abs_epi16(a);
+      |         ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_e8ad0.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_e8ad0.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e8ad0.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_e8ad0/fast' failed
+make: *** [cmTC_e8ad0/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m256i a = {0};
+    a = _mm256_abs_epi16(a);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_AVX2_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_19311/fast && /usr/bin/make -f CMakeFiles/cmTC_19311.dir/build.make CMakeFiles/cmTC_19311.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_19311.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_AVX2_1   -o CMakeFiles/cmTC_19311.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+    6 |     a = _mm256_abs_epi16(a);
+      |     ~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:47,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx2intrin.h:63:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_abs_epi16’: target specific option mismatch
+   63 | _mm256_abs_epi16 (__m256i __A)
+      | ^~~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm256_abs_epi16(a);
+      |         ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_19311.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_19311.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_19311.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_19311/fast' failed
+make: *** [cmTC_19311/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m256i a = {0};
+    a = _mm256_abs_epi16(a);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX512F_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_fb1b1/fast && /usr/bin/make -f CMakeFiles/cmTC_fb1b1.dir/build.make CMakeFiles/cmTC_fb1b1.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fb1b1.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_AVX512F_1   -o CMakeFiles/cmTC_fb1b1.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+    5 |     __m512 a = _mm512_set1_ps(1.f);
+      |            ^
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:12556:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_add_ps’: target specific option mismatch
+12556 | _mm512_add_ps (__m512 __A, __m512 __B)
+      | ^~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:248:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  248 | _mm512_set1_ps (float __A)
+      | ^~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:248:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  248 | _mm512_set1_ps (float __A)
+      | ^~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
+    5 |     __m512 a = _mm512_set1_ps(1.f);
+      |                ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_fb1b1.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_fb1b1.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_fb1b1.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_fb1b1/fast' failed
+make: *** [cmTC_fb1b1/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512 a = _mm512_set1_ps(1.f);
+    a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_AVX512F_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e48ef/fast && /usr/bin/make -f CMakeFiles/cmTC_e48ef.dir/build.make CMakeFiles/cmTC_e48ef.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e48ef.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_AVX512F_1   -o CMakeFiles/cmTC_e48ef.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+    5 |     __m512 a = _mm512_set1_ps(1.f);
+      |            ^
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:12556:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_add_ps’: target specific option mismatch
+12556 | _mm512_add_ps (__m512 __A, __m512 __B)
+      | ^~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:248:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  248 | _mm512_set1_ps (float __A)
+      | ^~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:248:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  248 | _mm512_set1_ps (float __A)
+      | ^~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
+    5 |     __m512 a = _mm512_set1_ps(1.f);
+      |                ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_e48ef.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_e48ef.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e48ef.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_e48ef/fast' failed
+make: *** [cmTC_e48ef/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512 a = _mm512_set1_ps(1.f);
+    a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX512BW_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a7028/fast && /usr/bin/make -f CMakeFiles/cmTC_a7028.dir/build.make CMakeFiles/cmTC_a7028.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a7028.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_AVX512BW_1   -o CMakeFiles/cmTC_a7028.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+    5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+      |             ^~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:59,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bwintrin.h:1884:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_shuffle_epi8’: target specific option mismatch
+ 1884 | _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
+      | ^~~~~~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
+    7 |     load = _mm512_shuffle_epi8(load, mask);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:79:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set_epi64’: target specific option mismatch
+   79 | _mm512_set_epi64 (long long __A, long long __B, long long __C,
+      | ^~~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
+    5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_a7028.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_a7028.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_a7028.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_a7028/fast' failed
+make: *** [cmTC_a7028/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+    __attribute__((unused)) __m512i load = {0};
+    load = _mm512_shuffle_epi8(load, mask);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_AVX512BW_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3079d/fast && /usr/bin/make -f CMakeFiles/cmTC_3079d.dir/build.make CMakeFiles/cmTC_3079d.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3079d.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_AVX512BW_1   -o CMakeFiles/cmTC_3079d.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+    5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+      |             ^~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:59,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bwintrin.h:1884:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_shuffle_epi8’: target specific option mismatch
+ 1884 | _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
+      | ^~~~~~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
+    7 |     load = _mm512_shuffle_epi8(load, mask);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:79:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set_epi64’: target specific option mismatch
+   79 | _mm512_set_epi64 (long long __A, long long __B, long long __C,
+      | ^~~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
+    5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_3079d.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_3079d.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_3079d.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_3079d/fast' failed
+make: *** [cmTC_3079d/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+    __attribute__((unused)) __m512i load = {0};
+    load = _mm512_shuffle_epi8(load, mask);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_CLFLUSHOPT_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1da0a/fast && /usr/bin/make -f CMakeFiles/cmTC_1da0a.dir/build.make CMakeFiles/cmTC_1da0a.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1da0a.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_HAS_CLFLUSHOPT_1   -o CMakeFiles/cmTC_1da0a.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
+    6 |     __builtin_ia32_clflushopt(&flush);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_1da0a.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_1da0a.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_1da0a.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_1da0a/fast' failed
+make: *** [cmTC_1da0a/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    int flush = 1;
+    __builtin_ia32_clflushopt(&flush);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_COMPILES_CLFLUSHOPT_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c74ac/fast && /usr/bin/make -f CMakeFiles/cmTC_c74ac.dir/build.make CMakeFiles/cmTC_c74ac.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c74ac.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DC_COMPILES_CLFLUSHOPT_1   -o CMakeFiles/cmTC_c74ac.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
+    6 |     __builtin_ia32_clflushopt(&flush);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_c74ac.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_c74ac.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_c74ac.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_c74ac/fast' failed
+make: *** [cmTC_c74ac/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    int flush = 1;
+    __builtin_ia32_clflushopt(&flush);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_SSE3_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_26af0/fast && /usr/bin/make -f CMakeFiles/cmTC_26af0.dir/build.make CMakeFiles/cmTC_26af0.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_26af0.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_SSE3_1   -o CMakeFiles/cmTC_26af0.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/pmmintrin.h:111:1: error: inlining failed in call to ‘always_inline’ ‘_mm_lddqu_si128’: target specific option mismatch
+  111 | _mm_lddqu_si128 (__m128i const *__P)
+      | ^~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
+    7 |     a = _mm_lddqu_si128( (const __m128i*)vals );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_26af0.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_26af0.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_26af0.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_26af0/fast' failed
+make: *** [cmTC_26af0/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <pmmintrin.h>
+  int main( )
+  {
+    const int vals[4] = {0,0,0,0};
+    __attribute__((unused)) __m128i a;
+    a = _mm_lddqu_si128( (const __m128i*)vals );
+    return 0;
+  }
+Performing C SOURCE FILE Test CXX_COMPILES_SSE3_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c4f72/fast && /usr/bin/make -f CMakeFiles/cmTC_c4f72.dir/build.make CMakeFiles/cmTC_c4f72.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c4f72.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_SSE3_1   -o CMakeFiles/cmTC_c4f72.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/pmmintrin.h:111:1: error: inlining failed in call to ‘always_inline’ ‘_mm_lddqu_si128’: target specific option mismatch
+  111 | _mm_lddqu_si128 (__m128i const *__P)
+      | ^~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
+    7 |     a = _mm_lddqu_si128( (const __m128i*)vals );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_c4f72.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_c4f72.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_c4f72.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_c4f72/fast' failed
+make: *** [cmTC_c4f72/fast] Error 2
+
+
+Source file was:
+
+  #include <pmmintrin.h>
+  int main( )
+  {
+    const int vals[4] = {0,0,0,0};
+    __attribute__((unused)) __m128i a;
+    a = _mm_lddqu_si128( (const __m128i*)vals );
+    return 0;
+  }
+Performing C SOURCE FILE Test CXX_HAS_SSE4_1_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5ec63/fast && /usr/bin/make -f CMakeFiles/cmTC_5ec63.dir/build.make CMakeFiles/cmTC_5ec63.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5ec63.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_SSE4_1_1   -o CMakeFiles/cmTC_5ec63.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:282:1: error: inlining failed in call to ‘always_inline’ ‘_mm_max_epi8’: target specific option mismatch
+  282 | _mm_max_epi8 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+    7 |     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+      |                                           ^~~~~~~~~~~~~~~~~~
+In file included from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:282:1: error: inlining failed in call to ‘always_inline’ ‘_mm_max_epi8’: target specific option mismatch
+  282 | _mm_max_epi8 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+    7 |     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+      |                                           ^~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_5ec63.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_5ec63.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_5ec63.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_5ec63/fast' failed
+make: *** [cmTC_5ec63/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <smmintrin.h>
+  int main ()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_SSE4_1_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f4790/fast && /usr/bin/make -f CMakeFiles/cmTC_f4790.dir/build.make CMakeFiles/cmTC_f4790.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f4790.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_SSE4_1_1   -o CMakeFiles/cmTC_f4790.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:282:1: error: inlining failed in call to ‘always_inline’ ‘_mm_max_epi8’: target specific option mismatch
+  282 | _mm_max_epi8 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+    7 |     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+      |                                           ^~~~~~~~~~~~~~~~~~
+In file included from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:282:1: error: inlining failed in call to ‘always_inline’ ‘_mm_max_epi8’: target specific option mismatch
+  282 | _mm_max_epi8 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:43: note: called from here
+    7 |     __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+      |                                           ^~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_f4790.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_f4790.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_f4790.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_f4790/fast' failed
+make: *** [cmTC_f4790/fast] Error 2
+
+
+Source file was:
+
+  #include <smmintrin.h>
+  int main ()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i res = _mm_max_epi8(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_SSE4_2_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_51606/fast && /usr/bin/make -f CMakeFiles/cmTC_51606.dir/build.make CMakeFiles/cmTC_51606.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_51606.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_SSE4_2_1   -o CMakeFiles/cmTC_51606.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/nmmintrin.h:31,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:797:1: error: inlining failed in call to ‘always_inline’ ‘_mm_cmpgt_epi64’: target specific option mismatch
+  797 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+    8 |     c = _mm_cmpgt_epi64(a, b);
+      |         ^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/nmmintrin.h:31,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:797:1: error: inlining failed in call to ‘always_inline’ ‘_mm_cmpgt_epi64’: target specific option mismatch
+  797 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+    8 |     c = _mm_cmpgt_epi64(a, b);
+      |         ^~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_51606.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_51606.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_51606.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_51606/fast' failed
+make: *** [cmTC_51606/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <nmmintrin.h>
+  int main()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i c = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    c = _mm_cmpgt_epi64(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_SSE4_2_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_249e9/fast && /usr/bin/make -f CMakeFiles/cmTC_249e9.dir/build.make CMakeFiles/cmTC_249e9.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_249e9.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_SSE4_2_1   -o CMakeFiles/cmTC_249e9.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/nmmintrin.h:31,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:797:1: error: inlining failed in call to ‘always_inline’ ‘_mm_cmpgt_epi64’: target specific option mismatch
+  797 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+    8 |     c = _mm_cmpgt_epi64(a, b);
+      |         ^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/nmmintrin.h:31,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:797:1: error: inlining failed in call to ‘always_inline’ ‘_mm_cmpgt_epi64’: target specific option mismatch
+  797 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:8:9: note: called from here
+    8 |     c = _mm_cmpgt_epi64(a, b);
+      |         ^~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_249e9.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_249e9.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_249e9.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_249e9/fast' failed
+make: *** [cmTC_249e9/fast] Error 2
+
+
+Source file was:
+
+  #include <nmmintrin.h>
+  int main()
+  {
+    __m128i a = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __m128i b = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    __attribute__((unused)) __m128i c = _mm_set_epi8(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+    c = _mm_cmpgt_epi64(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5d01f/fast && /usr/bin/make -f CMakeFiles/cmTC_5d01f.dir/build.make CMakeFiles/cmTC_5d01f.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5d01f.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_AVX_1   -o CMakeFiles/cmTC_5d01f.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+    6 |     a = _mm256_set1_ps(0);
+      |     ~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:43,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avxintrin.h:1318:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_set1_ps’: target specific option mismatch
+ 1318 | _mm256_set1_ps (float __A)
+      | ^~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm256_set1_ps(0);
+      |         ^~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_5d01f.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_5d01f.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_5d01f.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_5d01f/fast' failed
+make: *** [cmTC_5d01f/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __attribute__((unused)) __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_AVX_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e19f1/fast && /usr/bin/make -f CMakeFiles/cmTC_e19f1.dir/build.make CMakeFiles/cmTC_e19f1.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e19f1.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_AVX_1   -o CMakeFiles/cmTC_e19f1.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+    6 |     a = _mm256_set1_ps(0);
+      |     ~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:43,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avxintrin.h:1318:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_set1_ps’: target specific option mismatch
+ 1318 | _mm256_set1_ps (float __A)
+      | ^~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm256_set1_ps(0);
+      |         ^~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_e19f1.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_e19f1.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e19f1.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_e19f1/fast' failed
+make: *** [cmTC_e19f1/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __attribute__((unused)) __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX2_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2b318/fast && /usr/bin/make -f CMakeFiles/cmTC_2b318.dir/build.make CMakeFiles/cmTC_2b318.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2b318.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_AVX2_1   -o CMakeFiles/cmTC_2b318.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+    6 |     a = _mm256_abs_epi16(a);
+      |     ~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:47,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx2intrin.h:63:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_abs_epi16’: target specific option mismatch
+   63 | _mm256_abs_epi16 (__m256i __A)
+      | ^~~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm256_abs_epi16(a);
+      |         ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_2b318.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_2b318.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_2b318.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_2b318/fast' failed
+make: *** [cmTC_2b318/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m256i a = {0};
+    a = _mm256_abs_epi16(a);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_AVX2_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7d8ed/fast && /usr/bin/make -f CMakeFiles/cmTC_7d8ed.dir/build.make CMakeFiles/cmTC_7d8ed.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7d8ed.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_AVX2_1   -o CMakeFiles/cmTC_7d8ed.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+    6 |     a = _mm256_abs_epi16(a);
+      |     ~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:47,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx2intrin.h:63:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_abs_epi16’: target specific option mismatch
+   63 | _mm256_abs_epi16 (__m256i __A)
+      | ^~~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm256_abs_epi16(a);
+      |         ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_7d8ed.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_7d8ed.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_7d8ed.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_7d8ed/fast' failed
+make: *** [cmTC_7d8ed/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m256i a = {0};
+    a = _mm256_abs_epi16(a);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX512F_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5c410/fast && /usr/bin/make -f CMakeFiles/cmTC_5c410.dir/build.make CMakeFiles/cmTC_5c410.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5c410.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_AVX512F_1   -o CMakeFiles/cmTC_5c410.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+    5 |     __m512 a = _mm512_set1_ps(1.f);
+      |            ^
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:12556:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_add_ps’: target specific option mismatch
+12556 | _mm512_add_ps (__m512 __A, __m512 __B)
+      | ^~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:248:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  248 | _mm512_set1_ps (float __A)
+      | ^~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:248:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  248 | _mm512_set1_ps (float __A)
+      | ^~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
+    5 |     __m512 a = _mm512_set1_ps(1.f);
+      |                ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_5c410.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_5c410.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_5c410.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_5c410/fast' failed
+make: *** [cmTC_5c410/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512 a = _mm512_set1_ps(1.f);
+    a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_AVX512F_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e646e/fast && /usr/bin/make -f CMakeFiles/cmTC_e646e.dir/build.make CMakeFiles/cmTC_e646e.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e646e.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_AVX512F_1   -o CMakeFiles/cmTC_e646e.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+    5 |     __m512 a = _mm512_set1_ps(1.f);
+      |            ^
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:12556:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_add_ps’: target specific option mismatch
+12556 | _mm512_add_ps (__m512 __A, __m512 __B)
+      | ^~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:248:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  248 | _mm512_set1_ps (float __A)
+      | ^~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+    6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:248:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  248 | _mm512_set1_ps (float __A)
+      | ^~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
+    5 |     __m512 a = _mm512_set1_ps(1.f);
+      |                ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_e646e.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_e646e.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e646e.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_e646e/fast' failed
+make: *** [cmTC_e646e/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512 a = _mm512_set1_ps(1.f);
+    a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX512BW_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_37cf1/fast && /usr/bin/make -f CMakeFiles/cmTC_37cf1.dir/build.make CMakeFiles/cmTC_37cf1.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_37cf1.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_AVX512BW_1   -o CMakeFiles/cmTC_37cf1.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+    5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+      |             ^~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:59,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bwintrin.h:1884:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_shuffle_epi8’: target specific option mismatch
+ 1884 | _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
+      | ^~~~~~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
+    7 |     load = _mm512_shuffle_epi8(load, mask);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:79:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set_epi64’: target specific option mismatch
+   79 | _mm512_set_epi64 (long long __A, long long __B, long long __C,
+      | ^~~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
+    5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_37cf1.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_37cf1.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_37cf1.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_37cf1/fast' failed
+make: *** [cmTC_37cf1/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+    __attribute__((unused)) __m512i load = {0};
+    load = _mm512_shuffle_epi8(load, mask);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_AVX512BW_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4ef6b/fast && /usr/bin/make -f CMakeFiles/cmTC_4ef6b.dir/build.make CMakeFiles/cmTC_4ef6b.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4ef6b.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_AVX512BW_1   -o CMakeFiles/cmTC_4ef6b.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: error: AVX512F vector return without AVX512F enabled changes the ABI [-Werror=psabi]
+    5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+      |             ^~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:59,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bwintrin.h:1884:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_shuffle_epi8’: target specific option mismatch
+ 1884 | _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
+      | ^~~~~~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
+    7 |     load = _mm512_shuffle_epi8(load, mask);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:49,
+                 from /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:79:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set_epi64’: target specific option mismatch
+   79 | _mm512_set_epi64 (long long __A, long long __B, long long __C,
+      | ^~~~~~~~~~~~~~~~
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
+    5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+CMakeFiles/cmTC_4ef6b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_4ef6b.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_4ef6b.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_4ef6b/fast' failed
+make: *** [cmTC_4ef6b/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
+    __attribute__((unused)) __m512i load = {0};
+    load = _mm512_shuffle_epi8(load, mask);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_CLFLUSHOPT_1 failed with the following compile output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6438f/fast && /usr/bin/make -f CMakeFiles/cmTC_6438f.dir/build.make CMakeFiles/cmTC_6438f.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6438f.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_HAS_CLFLUSHOPT_1   -o CMakeFiles/cmTC_6438f.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
+    6 |     __builtin_ia32_clflushopt(&flush);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_6438f.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_6438f.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_6438f.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_6438f/fast' failed
+make: *** [cmTC_6438f/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    int flush = 1;
+    __builtin_ia32_clflushopt(&flush);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_COMPILES_CLFLUSHOPT_1 failed with the following output:
+Change Dir: /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ae981/fast && /usr/bin/make -f CMakeFiles/cmTC_ae981.dir/build.make CMakeFiles/cmTC_ae981.dir/build
+make[1]: Entering directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ae981.dir/src.c.o
+/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -DCXX_COMPILES_CLFLUSHOPT_1   -o CMakeFiles/cmTC_ae981.dir/src.c.o   -c /home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
+    6 |     __builtin_ia32_clflushopt(&flush);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_ae981.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_ae981.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_ae981.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/suhyeon/db-pim/mepid-join-artifact/upmem-2023.2.0-Linux-x86_64/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_ae981/fast' failed
+make: *** [cmTC_ae981/fast] Error 2
+
+
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    int flush = 1;
+    __builtin_ia32_clflushopt(&flush);
+    return 0;
+  }
+
