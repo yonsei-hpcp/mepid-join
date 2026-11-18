@@ -1,6 +1,6 @@
 # MEPID-Join \[VLDB '27 / PVLDB '26\]
 
-This repository contains the source code for [MEPID-Join \[VLDB '27 / PVLDB '26\]](https://doi.org/10.14778/3849423.3849424), a memory-efficient in-memory join algorithm for capacity-limited Processing-in-DIMM architectures (e.g., UPMEM DIMM).
+This repository contains the source code for [MEPID-Join \[VLDB '27 / PVLDB '26\]](https://www.vldb.org/pvldb/vol20/p66-kim.pdf), a memory-efficient in-memory join algorithm for capacity-limited Processing-in-DIMM architectures (e.g., UPMEM DIMM).
 If you find MEPID-Join useful to your research, please cite:
 
 ```bibtex
